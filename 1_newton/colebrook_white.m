@@ -28,6 +28,9 @@ TOL = 10^(-8);
 [x_pf, i_pf, sc_pf] = pfisso(g, 0.07, TOL, 1000);
 [x_sv, i_sv, sc_sv] = secvariabile(f_zero, 0.07, 0.08, TOL, 1000);
 
+fprintf("FUNZIONE ZERO APPROSSIMATA (secondo il metodo del punto fisso):\n\t> alpha = %.16f\n\t> scarto = %.16f\n", x_pf(end), sc_pf(end))
+fprintf("FUNZIONE ZERO APPROSSIMATA (secondo il metodo della secante variabile):\n\t> alpha = %.16f\n\t> scarto = %.16f\n", x_sv(end), sc_sv(end))
+
 semilogy(1: i_pf, abs(sc_pf), Color='#ffb843', marker='o'); hold on;
 semilogy(1:i_sv, abs(sc_sv), Color='#83ff5e', marker='o'); hold off;
 
