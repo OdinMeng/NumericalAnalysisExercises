@@ -2,43 +2,43 @@
 % Dino Meng, SM3201466
 
 %% === Slide 12
-% fprintf("ESERCIZIO DELLA SLIDE 12\n")
-% f = @(x) exp(-x) - 5*x;
-% 
-% hold on
-% fplot(f, [-5, 5]);
-% fplot(0, Color='Black');
-% hold off 
-% 
-% % A posteriori decido che un buon intervallo è [-1, 1]
-% [vc, k, ~, ~] = bisezione(-1, 1, 1e-8, 1e-8, 1000, f);
-% 
-% fprintf("\tRadice approssimata: %.9f\n", vc(end));
-% fprintf("\tNumero di iterazioni effettuate: %d\n", k);
-% fprintf("\tNumero di iterazioni minime previste (teoricamente): %d\n", ceil(log2(2/1e-8))-1)
-% 
-% input("Premere enter per continuare al prossimo esercizio\n> ")
-% 
-% %% == Slide 20
-% fprintf("ESERCIZIO DELLA SLIDE 20\n")
-% f = @(x) x.^2 - 5 * x + 6;
-% df = @(x) 2 * x - 5;
-% 
-% hold on
-% fplot(f, [-5, 5]);
-% fplot(0, Color='Black');
-% hold off 
-% 
-% % Per il calcolo della radice maggiore è conveniente scegliere un punto a destra della radice maggiore, come x_0 = 3.2
-% 
-% [x, iter, scarti] = newton(f,df, 3.2, 1e-8, 1000);
-% 
-% fprintf("\tRadice approssimata: %.9f\n", x(end));
-% fprintf("\tNumero di iterazioni effettuate: %d\n", iter);
-% 
-% semilogy ( 1 : iter , abs ( scarti ) , 'm-*' ) 
-% 
-% input("Premere enter per continuare al prossimo esercizio\n> ")
+fprintf("ESERCIZIO DELLA SLIDE 12\n")
+f = @(x) exp(-x) - 5*x;
+
+hold on
+fplot(f, [-5, 5]);
+fplot(0, Color='Black');
+hold off 
+
+% A posteriori decido che un buon intervallo è [-1, 1]
+[vc, k, ~, ~] = bisezione(-1, 1, 1e-8, 1e-8, 1000, f);
+
+fprintf("\tRadice approssimata: %.9f\n", vc(end));
+fprintf("\tNumero di iterazioni effettuate: %d\n", k);
+fprintf("\tNumero di iterazioni minime previste (teoricamente): %d\n", ceil(log2(2/1e-8))-1)
+
+input("Premere enter per continuare al prossimo esercizio\n> ")
+
+%% == Slide 20
+fprintf("ESERCIZIO DELLA SLIDE 20\n")
+f = @(x) x.^2 - 5 * x + 6;
+df = @(x) 2 * x - 5;
+
+hold on
+fplot(f, [-5, 5]);
+fplot(0, Color='Black');
+hold off 
+
+% Per il calcolo della radice maggiore è conveniente scegliere un punto a destra della radice maggiore, come x_0 = 3.2
+
+[x, iter, scarti] = newton(f,df, 3.2, 1e-8, 1000);
+
+fprintf("\tRadice approssimata: %.9f\n", x(end));
+fprintf("\tNumero di iterazioni effettuate: %d\n", iter);
+
+semilogy ( 1 : iter , abs ( scarti ) , 'm-*' ) 
+
+input("Premere enter per continuare al prossimo esercizio\n> ")
 
 %% == Slide 21
 fprintf("ESERCIZIO DELLA SLIDE 21\n")
