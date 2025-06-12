@@ -27,8 +27,8 @@ $\hrulefill$
 
 |   **METODO**  | **RESIDUO RELATIVO** | **ERRORE RELATIVO** |
 |:-------------:|:--------------------:|:-------------------:|
-| **LU SENZA PIVOTING**   |   0.0000362183199862 | 17.5742961327875946 |
-| **LU CON PIVOTING** |   0.0000000000000001 |  0.0000000166807056 |
+| **LU SENZA PIVOTING**   |   $3.62183200 \times 10^{-05}$ | $1.75742961 \times 10^{1}$ |
+| **LU CON PIVOTING** |   $1.01663404\times 10^{-16}$ |  $1.66807056\times 10^{-8}$ |
 
 > *Nota*: tabella generata in `esercizio_obbligatorio.m`
 
@@ -38,4 +38,4 @@ $\hrulefill$
 
 **Q.** Com'è il residuo nel secondo caso (LU calcolata con pivoting per righe)? Perché l'errore non è dell’ordine della precisione di macchina ma molto più grande?
 
-**A.** Nel secondo caso, il residuo diventa significativamente più piccolo rispetto al primo caso, con una diminuzione di circa 11 ordini di grandezza. Tuttavia l'errore relativo diventa molto più grande di quello del residuo relativo, e questo è dovuto al mal condizionamento della matrice. Infatti la matrice generata è una versione leggermente variata di Hilbert (in particolare nella sottomatrice principale di ordine 2), ossia una tipologia di matrice nota ad essere mal condizionata. Eseguendo il comando `norm(A) * norm(A^-1)`a seguito dell'esecuzione dello script `esercizio_obbligatorio.m`, otteniamo un valore di `7.584569571517603e+09`; effettivamente, la differenza in termini di ordini di grandezza tra il residuo relativo e l'errore relativo è proprio nove. Un'altra evidenza principale è proprio il warning dato eseguendo `esercizio_obbligatorio.m`
+**A.** Nel secondo caso, il residuo diventa significativamente più piccolo rispetto al primo caso, con una diminuzione di circa 11 ordini di grandezza. Infatti, è dell'ordine di grandezza di $10^{-16}$ e quindi di precisione macchina. Tuttavia l'errore relativo diventa molto più grande di quello del residuo relativo, e questo è dovuto al mal condizionamento della matrice. Infatti la matrice generata è una versione leggermente variata di Hilbert (in particolare modificata nella sottomatrice principale di ordine 2, $A_2$), ossia una tipologia di matrice nota ad essere mal condizionata. Eseguendo il comando `norm(A) * norm(A^-1)`a seguito dell'esecuzione dello script `esercizio_obbligatorio.m`, otteniamo un valore di `7.584569571517603e+09`; effettivamente, la differenza in termini di ordini di grandezza tra l'errore relativo e il residuo relativo è meno di nove. Un'altra evidenza principale di questa caratteristica è proprio il warning dato eseguendo `esercizio_obbligatorio.m`.
