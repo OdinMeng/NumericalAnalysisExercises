@@ -28,13 +28,14 @@ disp(x3);
 % positiva, siccome ha autovalori positivi)
 fprintf("AUTOVALORI DI A: ");
 disp(eig(A))
-K = max(eig(A)/min(eig(A)));
-fprintf("FATTORE DI CONDIZIONAMENTO DI A1: %.8e\n", K);
+
+fprintf("FATTORE DI CONDIZIONAMENTO DI A1:");
+disp(max(eig(A)/min(eig(A))))
 
 % Per il fatto che se lambda è autovalore di A allora lambda^i è autovalore
 % di A^i, si ha che tale fattore di condizionamento aumenta e aumentando
 % quindi il rischio di propagare l'errore commesso.
-fprintf("CONDIZIONAMENTO DI A2, A3: %.8e, %.8e\n", K^2, K^3);
+fprintf("CONDIZIONAMENTO DI A2, A3")
 
 input("Premere input per passare al prossimo esercizio.\n> ")
 % SLIDE 25
