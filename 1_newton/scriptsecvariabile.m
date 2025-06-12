@@ -12,5 +12,3 @@ end
 ezplot(@(x) exp(-x) + cos(x) - 3); hold on; ezplot(@(x) 0); hold off;
 disp("Estimated solution: "+ x(end))
 disp("Estimated error: "+ sc(end))
-
-clear x; clear sc;

@@ -70,4 +70,3 @@ title("Convergence Profile of Fixed Point Method")
 print -dpdf ./graphs/graph_scriptpfisso.pdf
 
 
-clear g; clear it; clear f_id; clear x; clear i_; clear sc; clear f; clear i; clear TABLE;clear x; clear i_1; clear i_2; clear sc1; clear sc2

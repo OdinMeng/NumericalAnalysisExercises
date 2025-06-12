@@ -31,7 +31,7 @@ function [x, i, scarti]=tfissa(f, df, x_0, TOL, MAXITER)
         return;
     end
 
-    while ( abs(scarti(end)) >= TOL) && (i <= MAXITER) && (f(x(end)) ~= 0)
+    while ( abs(scarti(end)) >= TOL) && (i < MAXITER) && (f(x(end)) ~= 0)
         i = i + 1;
 
         if dfx0 == 0

@@ -20,7 +20,7 @@ function [x, i, scarti] = pfisso(g, x_0, TOL, MAXITER)
     x_old = x_0;
     x = [x_old];
 
-    while (i <= MAXITER) && (abs(scarti(end)) >= TOL) && (g(x(end)) ~= x(end))
+    while (i < MAXITER) && (abs(scarti(end)) >= TOL) && (g(x(end)) ~= x(end))
             x_new = g(x_old);
 
             x = [x; x_new];

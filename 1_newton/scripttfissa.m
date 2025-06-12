@@ -33,14 +33,3 @@ xlabel("-th iteration")
 ylabel("difference")
 
 print -dpdf ./graphs/graficotf.pdf
-
-clear i_1 
-clear scarti_1
-clear i_2
-clear scarti_2
-clear f
-clear df
-clear ans
-clear MAXITER
-clear tol
-clear x_0
