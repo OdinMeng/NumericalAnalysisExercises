@@ -52,6 +52,7 @@ input("Premere enter per continuare: ");
 
 p_poly = polyfit(sigma, eps, N-1); f_poly = @(x_) polyval(p_poly, x_);
 
+figure;
 hold on;
 
 scatter(sigma, eps, 'x');
