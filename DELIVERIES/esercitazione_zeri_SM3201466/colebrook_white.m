@@ -28,8 +28,8 @@ TOL = 10^(-8);
 [x_pf, i_pf, sc_pf] = pfisso(g, 0.07, TOL, 1000);
 [x_sv, i_sv, sc_sv] = secvariabile(f_zero, 0.07, 0.08, TOL, 1000);
 
-fprintf("FUNZIONE ZERO APPROSSIMATA (secondo il metodo del punto fisso):\n\t> alpha = %.16f\n\t> scarto = %.16f\n\t> iterazioni: %d\n", x_pf(end), sc_pf(end), i_pf)
-fprintf("FUNZIONE ZERO APPROSSIMATA (secondo il metodo della secante variabile):\n\t> alpha = %.16f\n\t> scarto = %.16f\n\t> iterazioni: %d\n", x_sv(end), sc_sv(end), i_sv)
+fprintf("FUNZIONE ZERO APPROSSIMATA (secondo il metodo del punto fisso):\n\t> alpha = %.16f\n\t> scarto = %.8e\n\t> iterazioni: %d\n", x_pf(end), sc_pf(end), i_pf)
+fprintf("FUNZIONE ZERO APPROSSIMATA (secondo il metodo della secante variabile):\n\t> alpha = %.16f\n\t> scarto = %.8e\n\t> iterazioni: %d\n", x_sv(end), sc_sv(end), i_sv)
 
 semilogy(1: i_pf, abs(sc_pf), Color='#ffb843', marker='o'); hold on;
 semilogy(1:i_sv, abs(sc_sv), Color='#83ff5e', marker='o'); hold off;
@@ -42,16 +42,16 @@ print -dpdf ./graphs/graph_colebrookwhite_convergent.pdf
 
 input("Press enter to continue with the next graph\n> ")
 
-% Note that secant method can diverge more easily, whereas the fixed point should converge with more choice of initial points (in particular bigger ones, the ones closer to zero may diverge):
-[x_pf, i_pf, sc_pf] = pfisso(g, 100, TOL, 1000);
-[x_sv, i_sv, sc_sv] = secvariabile(f_zero, 100, 101, TOL, 1000);
+% % Note that secant method can diverge more easily, whereas the fixed point should converge with more choice of initial points (in particular bigger ones, the ones closer to zero may diverge):
+% [x_pf, i_pf, sc_pf] = pfisso(g, 100, TOL, 1000);
+% [x_sv, i_sv, sc_sv] = secvariabile(f_zero, 100, 101, TOL, 1000);
 
-semilogy(1: i_pf, abs(sc_pf), Color='#ffb843', marker='o'); hold on;
-semilogy(1:i_sv, abs(sc_sv), Color='#83ff5e', marker='o'); hold off;
+% semilogy(1: i_pf, abs(sc_pf), Color='#ffb843', marker='o'); hold on;
+% semilogy(1:i_sv, abs(sc_sv), Color='#83ff5e', marker='o'); hold off;
 
-title("Convergence Profiles for Numerical Algorithms");
-subtitle("(Fixed Point vs Secant Method), divergent case")
+% title("Convergence Profiles for Numerical Algorithms");
+% subtitle("(Fixed Point vs Secant Method), divergent case")
 
-legend("Fixed Point", "Secant Method")
+% legend("Fixed Point", "Secant Method")
 
-print -dpdf ./graphs/graph_colebrookwhite_divergent.pdf
+% print -dpdf ./graphs/graph_colebrookwhite_divergent.pdf
